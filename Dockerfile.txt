@@ -1,0 +1,15 @@
+FROM nvidia/cuda:11.0-base
+CMD nvidia-smi
+MAINTAINER ML478
+LABEL description="Dockerfile for ML"
+
+# System dependencies
+RUN apt-get update && apt-get install -y
+RUN apt install python3-pip -y
+RUN pip install torch
+RUN pip install torchvision
+RUN pip install tqdm
+#for using graphs and stuff
+RUN pip install matplotlib
+RUN pip install numpy
+RUN pip install opencv-python
